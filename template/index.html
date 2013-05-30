@@ -9,7 +9,6 @@
   <p>- Easy Does It, Bonnie 'Prince' Billy</p>
 </blockquote>
 
-
 {% if posts %}
   <h2><em>The most recent posts</em></h2>
   {% for post in posts %}
@@ -33,11 +32,9 @@
     {# {% endif %} #}
   </article>
   {% endfor %}
+  <p><a class="older-posts" href="/archive/">Older posts &rarr;</a></p>
 {% else %}
   <p><em>There are no posts</em></p>
 {% endif %}
 
-
-
-<p><a class="older-posts" href="/archive/">Older posts &rarr;</a></p>
 {% endblock %}

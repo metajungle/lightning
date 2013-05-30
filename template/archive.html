@@ -5,6 +5,7 @@
 {{content}}
 </p>
 
+{% if posts %}
 <div id="archives">
     {% for post in posts %}
     <article>
@@ -16,4 +17,8 @@
     </article>
     {% endfor %}
 </div>
+{% else %}
+<p><em>There are no posts</em></p>
+{% endif %}
+
 {% endblock %}
