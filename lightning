@@ -53,8 +53,11 @@ class SiteBuilder:
     files = []
     # Get all files that end with .txt.
     for dirpath, dirnames, filenames in os.walk(self.content_root):
+      # Never process items in 'drafts' 
+      if 'drafts' in dirnames:
+        dirnames.remove('drafts')
       for fname in filenames:
-        if fname.endswith(".txt"):
+        if fname.endswith(".txt") or fname.endswith(".md"):
           # Get the file's path and modified time
           path = os.path.join(dirpath, fname)
           files.append({
@@ -196,7 +199,7 @@ class SiteBuilder:
     # Process the rest of the post as Markdown.
     markdown_lines = lines[separator_index+1:]
     markdown_body = ''.join(markdown_lines).decode('utf-8')
-    content = markdown2.markdown(markdown_body)
+    content = markdown2.markdown(markdown_body, extras=["footnotes"])
     # If there's no snip specified, try to parse it before the <!--more--> tag.
     snip = 'snip' in data and markdown2.markdown(data['snip']) \
                            or self.parse_snip(content)
@@ -250,6 +253,8 @@ class SiteBuilder:
       return 'draft'
     elif path.find('/archives/') >= 0:
       return 'archive'
+    elif path.find('/notes/') >= 0:
+      return 'note'
     if path.find('/links/') >= 0:
       return 'link'
     if path.find('/talks/') >= 0:
@@ -350,14 +355,18 @@ class SiteBuilder:
       limit = 'limit' in info and info['limit'] or 10
       type_filter = 'filter' in info and info['filter']
       items = self.get_list(type_filter, limit)
+      print "TYPE: %s" % type_filter
+      print "ITEMS %s" % len(items)
       # For lists, there may be broken links which were specified in relative
-      # format. These links need to be rewritten with the correct pathes.
+      # format. These links need to be rewritten with the correct paths.
       items = self.fix_broken_links(items)
       template_data['posts'] = items
 
     # Get the type and load the appropriate template.
     type_name = info['type']
     template_path = type_name + '.html'
+    print "PATH %s" % template_path
+    print "DATA %s" % template_data.keys()
     # Evaluate the template with data.
     html = self.render_template(template_path, template_data)
     # Compute the final path based on permalink config.
