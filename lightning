@@ -355,8 +355,6 @@ class SiteBuilder:
       limit = 'limit' in info and info['limit'] or 10
       type_filter = 'filter' in info and info['filter']
       items = self.get_list(type_filter, limit)
-      print "TYPE: %s" % type_filter
-      print "ITEMS %s" % len(items)
       # For lists, there may be broken links which were specified in relative
       # format. These links need to be rewritten with the correct paths.
       items = self.fix_broken_links(items)
@@ -365,8 +363,6 @@ class SiteBuilder:
     # Get the type and load the appropriate template.
     type_name = info['type']
     template_path = type_name + '.html'
-    print "PATH %s" % template_path
-    print "DATA %s" % template_data.keys()
     # Evaluate the template with data.
     html = self.render_template(template_path, template_data)
     # Compute the final path based on permalink config.
