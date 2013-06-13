@@ -54,8 +54,9 @@ class SiteBuilder:
     # Get all files that end with .txt.
     for dirpath, dirnames, filenames in os.walk(self.content_root):
       # Never process items in 'drafts' 
-      if 'drafts' in dirnames:
-        dirnames.remove('drafts')
+      for skip_folder in self.site_info['skip_folders']:
+        if skip_folder in dirnames:
+          dirnames.remove(skip_folder)
       for fname in filenames:
         if fname.endswith(".txt") or fname.endswith(".md"):
           # Get the file's path and modified time
