@@ -1,24 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p>
-{{content}}
-</p>
-
-{% if posts %}
-<div id="archives">
-    {% for post in posts %}
-    <article>
-      {% if post.posted_info %}
-      <span class="time">{{ post.posted }}</span>
-      {# <span class="time">{{ post.formatted }}</span> #}
-      {% endif %}
-      <span class="title"><a href="{{ post.permalink }}">{{ post.title }}</a></span>
-    </article>
-    {% endfor %}
-</div>
-{% else %}
-<p><em>There are no notes</em></p>
-{% endif %}
-
+<article>
+  <h1><a href="{{computed_link}}">{{title}}</a></h1>
+  <div class="subtitle">
+  {% if posted_info %}
+  <time>{{verb}} on {{posted_info.formatted}}</time>
+  {% endif %}
+  {% if link %}
+  <a class="permalink" href="{{permalink}}">&#8734;</a>
+  {% endif %}
+  </div>
+  <p>
+    {{content}}
+  </p>
+</article>
 {% endblock %}
