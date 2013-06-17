@@ -1,13 +1,18 @@
 site_title: metajungle
 date_format: '%d %B %Y'
+skip_folders: []
 verbs:
   post: 'Published'
   talk: 'Presented'
   link: 'Linked'
 permalink_format:
   post: '{{year}}/{{month}}/{{slug}}'
+  note: '{{year}}/{{month}}/{{slug}}'
+  link: '{{year}}/{{month}}/{{slug}}'
   page: '{{slug}}'
   draft: 'drafts/{{slug}}'
   archive: '{{slug}}'
+  notes: '{{slug}}'
+  posts: '{{slug}}'
   feed: '{{slug}}'
   index: ''
