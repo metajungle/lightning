@@ -1,18 +1,1 @@
-{% extends "base.html" %}
-
-{% block content %}
-<article>
-  <h1><a href="{{computed_link}}">{{title}}</a></h1>
-  <div class="subtitle">
-  {% if posted_info %}
-  <time>{{verb}} on {{posted_info.formatted}}</time>
-  {% endif %}
-  {% if link %}
-  <a class="permalink" href="{{permalink}}">&#8734;</a>
-  {% endif %}
-  </div>
-  <p>
-    {{content}}
-  </p>
-</article>
-{% endblock %}
+{% extends "post.html" %}
