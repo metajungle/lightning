@@ -9,15 +9,23 @@
   <id>http://metajungle.net/atom.xml</id>
   {% for post in posts %}
   <entry>
-    <title>{{ post.title }}</title>
+    <title>{% if post.link %}&#187; {% endif %}{{ post.title }}</title>
     <author><name>Jakob Henriksson</name></author>
+    {% if post.link %}
+    <link href="{{ post.link }}"/>
+    {% else %}
     <link href="{{ post.permalink }}"/>
+    {% endif %}
     {% if post.posted_info %}
     <updated>{{ post.rfc }}</updated>
     {% endif %}
     <id>{{ post.permalink }}</id>
     <content type="html">
       {{ post.content }}
+      {% if post.link %}
+      <p><a href="{{post.permalink}}" 
+         title="Permanent link to {{ post.title }}">&#8734;</a></p>
+      {% endif %}
     </content>
   </entry>
   {% endfor %}

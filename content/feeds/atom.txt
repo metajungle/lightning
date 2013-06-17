@@ -1,5 +1,5 @@
-Blog RSS
-========
+Metajungle
+==========
 list:
 limit: 50
 type: feed
