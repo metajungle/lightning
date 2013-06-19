@@ -200,7 +200,7 @@ class SiteBuilder:
     # Process the rest of the post as Markdown.
     markdown_lines = lines[separator_index+1:]
     markdown_body = ''.join(markdown_lines).decode('utf-8')
-    content = markdown2.markdown(markdown_body, extras=["footnotes"])
+    content = markdown2.markdown(markdown_body, extras=["footnotes", "header-ids"])
     # If there's no snip specified, try to parse it before the <!--more--> tag.
     snip = 'snip' in data and markdown2.markdown(data['snip']) \
                            or self.parse_snip(content)
