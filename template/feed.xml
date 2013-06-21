@@ -21,7 +21,9 @@
     {% endif %}
     <id>{{ post.permalink }}</id>
     <content type="html">
+      <![CDATA[
       {{ post.content }}
+      ]]>
       {% if post.link %}
       <p><a href="{{post.permalink}}" 
          title="Permanent link to {{ post.title }}">&#8734;</a></p>
