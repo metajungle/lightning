@@ -4,7 +4,7 @@
       xml:base="http://metajungle.net">
   <title>{{ title }}</title>
   <link href="http://metajungle.net/atom.xml" rel="self"/>
-  <link href="http://metajungle.net"/>
+  <!--<link href="http://metajungle.net"/>-->
   <updated>{{ rfc }}</updated>
   <id>http://metajungle.net/atom.xml</id>
   {% for post in posts %}
@@ -17,17 +17,17 @@
     <link href="{{ post.permalink }}"/>
     {% endif %}
     {% if post.posted_info %}
-    <updated>{{ post.rfc }}</updated>
+    <updated>{{ post.posted_info.rfc }}</updated>
     {% endif %}
-    <id>{{ post.permalink }}</id>
+    <id>http://metajungle.net{{ post.permalink }}</id>
     <content type="html">
       <![CDATA[
       {{ post.content }}
-      ]]>
       {% if post.link %}
       <p><a href="{{post.permalink}}" 
          title="Permanent link to {{ post.title }}">&#8734;</a></p>
       {% endif %}
+      ]]>
     </content>
   </entry>
   {% endfor %}
