@@ -142,8 +142,9 @@ header h1 {
   overflow: hidden;
 }
 
-#frontpage {
+.frontpage {
   margin-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 time {
