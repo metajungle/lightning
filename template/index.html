@@ -14,7 +14,7 @@
   {% for post in posts %}
   <article class="frontpage">
     <h3>
-      <a href="{{post.computed_link}}">{% if post.link %}&#10142; {% endif %}{{post.title}}</a>
+      <a href="{{post.computed_link}}">{% if post.type == 'link' and post.link %}&#10142; {% elif post.type == 'post' %}&#9734; {% endif %}{{post.title}}</a>
     </h3>
     <div class="subtitle">
     {% if post.posted_info %}

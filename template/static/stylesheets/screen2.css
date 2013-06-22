@@ -192,6 +192,14 @@ footer {
   padding-left: 10px;
 }
 
+#archives .post {
+    font-weight: bold;
+}
+
+#archives .link {
+/*    color: #56ACFF;*/
+}
+
 @media screen and (max-width: 979px) {
 
   /* fill up the screen */
