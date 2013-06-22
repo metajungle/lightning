@@ -13,9 +13,9 @@
   {# <h1><em>The most recent posts</em></h1> #}
   {% for post in posts %}
   <article class="frontpage">
-    <h4>
-      <a href="{{post.computed_link}}">{% if post.link %}&#187; {% endif %}{{post.title}}</a>
-    </h4>
+    <h3>
+      <a href="{{post.computed_link}}">{% if post.link %}&#10142; {% endif %}{{post.title}}</a>
+    </h3>
     <div class="subtitle">
     {% if post.posted_info %}
     <time>{{verb}} on {{post.posted_info.formatted}}</time>

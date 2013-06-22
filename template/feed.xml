@@ -9,7 +9,7 @@
   <id>http://metajungle.net/atom.xml</id>
   {% for post in posts %}
   <entry>
-    <title>{% if post.link %}&#187; {% endif %}{{ post.title }}</title>
+    <title>{% if post.link %}&#10142; {% endif %}{{ post.title }}</title>
     <author><name>Jakob Henriksson</name></author>
     {% if post.link %}
     <link href="{{ post.link }}"/>
