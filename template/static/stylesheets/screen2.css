@@ -10,7 +10,7 @@ h1:first-child{margin-top:0;padding-top:.25em;border-top:none;}
 h1, h3 {
     margin-bottom: 0px;
 }
-a{color:#4183c4;text-decoration:none;}
+a {color:#4183c4;text-decoration:none;}
 a:hover{text-decoration:underline;}
 blockquote {
     margin:1em 0;
@@ -24,6 +24,7 @@ p {
     margin:1em 0;
     line-height:1.5em;
 }
+
 
 pre,code{
     font:12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;

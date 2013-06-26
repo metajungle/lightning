@@ -2,7 +2,8 @@
 
 {% block content %}
 <article>
-  <h3><a href="{{computed_link}}">{% if link %}&#10142; {% endif %}{{title}}</a></h3>
+  <h3><a class="{% if type == 'link' and link %}link{% endif %}" 
+         href="{{computed_link}}">{% if link %}&#8594; {% endif %}{{title}}</a></h3>
   <div class="subtitle">
   {% if posted_info %}
   <time>{{verb}} on {{posted_info.formatted}}</time>

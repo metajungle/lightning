@@ -14,7 +14,8 @@
   {% for post in posts %}
   <article class="frontpage">
     <h3>
-      <a href="{{post.computed_link}}">{% if post.type == 'link' and post.link %}&#10142; {% elif post.type == 'post' %}&#9734; {% endif %}{{post.title}}</a>
+      <a class="{% if post.type == 'link' and post.link %}link{% endif %}" 
+        href="{{post.computed_link}}">{% if post.type == 'link' and post.link %}&#8594; {% elif post.type == 'post' %}&#9734; {% endif %}{{post.title}}</a>
     </h3>
     <div class="subtitle">
     {% if post.posted_info %}
@@ -32,7 +33,7 @@
     {% endif %}
   </article>
   {% endfor %}
-  <p><a class="older-posts" href="/archive/">Older posts &rarr;</a></p>
+  <p><a class="older-posts" href="/archive/">Older posts &#8594;</a></p>
 {% endif %}
 
 {% endblock %}
