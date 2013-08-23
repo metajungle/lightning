@@ -163,7 +163,7 @@ time {
   font-size: 0.95em;
 }
 
-aside {
+aside.sidebar {
   float: right;
   width: 200px;
   background-color: #f0f0f0;
@@ -171,6 +171,16 @@ aside {
   margin: 20px auto 5px auto;
   min-height: 80px;
   padding: 5px 10px 0px 10px;
+}
+
+aside.note {
+  /* background: #1f8dd6; */
+  background: #fefbed;
+  border: 2px solid #f1e7bc;
+  padding: 0.3em 1em;
+  margin: 15px 0px;
+  border-radius: 3px;
+  color: #000;
 }
 
 img.twitter {
