@@ -53,7 +53,7 @@ class SiteBuilder:
     files = []
     # Get all files that end with .txt.
     for dirpath, dirnames, filenames in os.walk(self.content_root):
-      # Never process items in 'drafts' 
+      # Never process items in specified folders
       for skip_folder in self.site_info['skip_folders']:
         if skip_folder in dirnames:
           dirnames.remove(skip_folder)
