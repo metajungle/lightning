@@ -202,6 +202,7 @@ footer {
   margin-left: 40px;
   margin-right: 40px;
   padding: 40px 0px;
+  text-align: center;
 }
 
 #archives article {
@@ -224,6 +225,10 @@ footer {
   /*    color: #56ACFF;*/
 }
 
+.mobile {
+  display: none;
+}
+
 @media screen and (max-width: 979px) {
 
   /* fill up the screen */
@@ -238,7 +243,7 @@ footer {
   }
   
   /* avoid floating and fill up the screen */
-  aside {
+  aside.sidebar {
     float: none;
     width: auto;
   }
@@ -258,5 +263,17 @@ footer {
   #header {
     display: none;
   }
-
+  
+  .time {
+    display: none;
+  }
+  
+  .time.mobile {
+    padding-left: 6px;
+    display: inline;
+  }
+  
+  #archives .title {
+    padding-left: 0px;
+  }
 }

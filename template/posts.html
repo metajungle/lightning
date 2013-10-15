@@ -14,6 +14,9 @@
       {# <span class="time">{{ post.formatted }}</span> #}
       {% endif %}
       <span class="title"><a href="{{ post.permalink }}">{% if post.link %}&#8594; {% endif %}{{ post.title }}</a></span>
+      {% if post.posted_info %}
+      <span class="time mobile">({{ post.posted }})</span>
+      {% endif %}
     </article>
     {% endfor %}
 </div>
