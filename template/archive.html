@@ -14,6 +14,9 @@
       {# <span class="time">{{ post.formatted }}</span> #}
       {% endif %}
       <span class="title"><a class="{% if post.type == 'link' and post.link %}link{% elif post.type == 'post' %}post{% endif %}" href="{{ post.permalink }}">{% if post.type == 'link' and post.link %}&#8594; {% elif post.type == 'post' %}&#9734; {% endif %}{{ post.title }}</a></span>
+      {% if post.posted_info %}
+      <span class="time mobile"><br/>({{ post.posted }})</span>
+      {% endif %}
     </article>
     {% endfor %}
 </div>
