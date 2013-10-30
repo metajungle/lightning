@@ -438,7 +438,9 @@ class SiteBuilder:
     out = [i['info'] for i in self.cache if 'posted' in i['info']]
     # Filter the list of all posts with the given parameters.
     if type_filter:
-      out = [i for i in out if i['type'] == type_filter]
+      # Consider all filters if there are multiple (comma-separated)
+      types = [t.strip() for t in type_filter.split(',')]
+      out = [i for i in out if i['type'] in type_filter]
     # Order it correctly.
     out = sorted(out, cmp=lambda a, b:
         b['posted_info']['unix'] - a['posted_info']['unix'])
