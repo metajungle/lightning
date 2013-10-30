@@ -1,0 +1,8 @@
+Posts
+=====
+list:
+limit: 1000
+type: posts
+filter: post
+
+These are my non-link posts

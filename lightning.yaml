@@ -1,5 +1,6 @@
 template: template
-content: /Users/b0kaj/Dropbox/Blog
+content: /Users/b0kaj/dev/git/lightning/content
+# content: /Users/b0kaj/Dropbox/Blog
 output: /Library/WebServer/Documents
 
 deploy: static-lightning
