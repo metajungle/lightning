@@ -3,5 +3,5 @@ Metajungle
 list:
 limit: 50
 type: feed
-filter: post
+filter: post, link
 
