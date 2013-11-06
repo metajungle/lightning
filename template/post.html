@@ -8,6 +8,9 @@
   {% if posted_info %}
   <time>{{verb}} on {{posted_info.formatted}}</time>
   {% endif %}
+  {% if updated_info %}
+  <time> - last updated on {{updated_info.formatted}}</time>
+  {% endif %}
   {% if link %}
   <a class="permalink" href="{{permalink}}">&#8734;</a>
   {% endif %}
