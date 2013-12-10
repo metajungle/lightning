@@ -30,15 +30,23 @@ a:hover {
 blockquote {
   margin: 1em 0;
   margin-left: 1em;
-  border-left: 5px solid #ddd;
-  padding-left: .6em;
+  border-left: 10px solid #ddd;
+  padding-left: 20px;
+  padding-right: 40px;
   color: #555;
+  font-size: 1.2em;
+  font-style: italic;
 }
 
 p {
   font-size: 16px;
   margin: 1em 0;
-  line-height: 1.4em;
+  line-height: 1.5em;
+}
+
+.caption {
+    font-size: 0.95em;
+    font-style: italic;
 }
 
 
@@ -78,6 +86,7 @@ sup {
   font-size: 0.83em;
   vertical-align: super;
   line-height: 0;
+  top: 0em;
 }
 
 header {
