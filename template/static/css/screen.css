@@ -56,6 +56,9 @@ hr {
     border: 0;
 }
 
+li {
+    padding-bottom: 6px;
+}
 
 pre,code {
   font: 12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
